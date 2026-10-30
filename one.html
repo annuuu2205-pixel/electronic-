@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroShop - Electronics Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f4f8fc;
+            color: #142d4e;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #142d4e;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffb703;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffb703;
+        }
+
+        /* Home Section */
+        .hero {
+            min-height: 350px;
+            padding: 70px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            background: linear-gradient(120deg, #dceeff, #ffffff);
+        }
+
+        .hero-text {
+            max-width: 520px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin-bottom: 18px;
+            color: #142d4e;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #4d6077;
+            margin-bottom: 25px;
+        }
+
+        .hero img {
+            width: 42%;
+            max-width: 430px;
+            border-radius: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ffb703;
+            color: #142d4e;
+            padding: 13px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #142d4e;
+            color: white;
+        }
+
+        /* Common Section */
+        section {
+            padding: 45px 7%;
+            text-align: center;
+        }
+
+        .heading {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        /* Categories */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .category {
+            background-color: white;
+            padding: 25px 15px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #dce5ef;
+            transition: 0.3s;
+        }
+
+        .category:hover {
+            transform: translateY(-7px);
+            background-color: #e6f3ff;
+        }
+
+        .category h3 {
+            margin-top: 12px;
+        }
+
+        .category .emoji {
+            font-size: 48px;
+        }
+
+        /* Products */
+        #products {
+            background-color: #eaf2fa;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #dce5ef;
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 20px #bdcddd;
+        }
+
+        .product .emoji {
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            margin-bottom: 12px;
+        }
+
+        .price {
+            color: #e69500;
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .product .btn {
+            background-color: #142d4e;
+            color: white;
+            border-radius: 7px;
+            padding: 11px 20px;
+        }
+
+        .product .btn:hover {
+            background-color: #ffb703;
+            color: #142d4e;
+        }
+
+        /* About Section */
+        #about p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 17px;
+            color: #4d6077;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #dceeff;
+        }
+
+        #contact p {
+            margin: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #142d4e;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        footer p {
+            margin: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav a {
+                margin: 8px;
+                display: inline-block;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 45px 6%;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero img {
+                width: 90%;
+            }
+
+            .categories,
+            .product-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 450px) {
+            .categories,
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+
+            .heading {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">⚡ ElectroShop</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <div class="hero" id="home">
+        <div class="hero-text">
+            <h1>Upgrade Your Tech Life</h1>
+
+            <p>
+                Discover the latest electronics, amazing gadgets
+                and smart accessories at affordable prices.
+            </p>
+
+            <a href="#products" class="btn">Shop Now →</a>
+        </div>
+
+        <img
+            src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=800&q=80"
+            alt="Electronic gadgets"
+        >
+    </div>
+
+    <!-- Categories Section -->
+    <section id="categories">
+        <h2 class="heading">Shop by Category</h2>
+
+        <div class="categories">
+
+            <div class="category">
+                <div class="emoji">📱</div>
+                <h3>Mobiles</h3>
+            </div>
+
+            <div class="category">
+                <div class="emoji">💻</div>
+                <h3>Laptops</h3>
+            </div>
+
+            <div class="category">
+                <div class="emoji">🎧</div>
+                <h3>Headphones</h3>
+            </div>
+
+            <div class="category">
+                <div class="emoji">⌚</div>
+                <h3>Smart Watches</h3>
+            </div>
+
+            <div class="category">
+                <div class="emoji">📺</div>
+                <h3>Televisions</h3>
+            </div>
+
+            <div class="category">
+                <div class="emoji">📷</div>
+                <h3>Cameras</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2 class="heading">Featured Products</h2>
+
+        <div class="product-container">
+
+            <div class="product">
+                <div class="emoji">📱</div>
+                <h3>Smartphone</h3>
+                <p class="price">₹19,999</p>
+                <a href="#contact" class="btn">Buy Now</a>
+            </div>
+
+            <div class="product">
+                <div class="emoji">💻</div>
+                <h3>Laptop</h3>
+                <p class="price">₹49,999</p>
+                <a href="#contact" class="btn">Buy Now</a>
+            </div>
+
+            <div class="product">
+                <div class="emoji">🎧</div>
+                <h3>Wireless Headphones</h3>
+                <p class="price">₹1,999</p>
+                <a href="#contact" class="btn">Buy Now</a>
+            </div>
+
+            <div class="product">
+                <div class="emoji">⌚</div>
+                <h3>Smart Watch</h3>
+                <p class="price">₹2,499</p>
+                <a href="#contact" class="btn">Buy Now</a>
+            </div>
+
+            <div class="product">
+                <div class="emoji">📺</div>
+                <h3>Smart Television</h3>
+                <p class="price">₹29,999</p>
+                <a href="#contact" class="btn">Buy Now</a>
+            </div>
+
+            <div class="product">
+                <div class="emoji">📷</div>
+                <h3>Digital Camera</h3>
+                <p class="price">₹15,999</p>
+                <a href="#contact" class="btn">Buy Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="heading">About ElectroShop</h2>
+
+        <p>
+            Welcome to ElectroShop, your destination for modern
+            electronic products. We offer smartphones, laptops,
+            headphones, smart watches and many more gadgets.
+            Our goal is to make technology simple and affordable
+            for everyone.
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="heading">Contact Us</h2>
+
+        <p>📧 Email: support@electroshop.com</p>
+        <p>📞 Phone: +91 98765 43210</p>
+        <p>📍 Address: Ahmedabad, Gujarat, India</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>⚡ ElectroShop - Your Electronics, Our Priority</p>
+        <p>© 2026 ElectroShop. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+</body>
+</html>
